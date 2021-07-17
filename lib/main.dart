@@ -11,22 +11,6 @@ class MyApp extends StatelessWidget {
       home: new RandomWords(),
     );
   }
-  // Widget build(BuildContext context) {
-  //   //final wordPair = new WordPair.random();
-  //   return new MaterialApp(
-  //     // title: 'Welcome to Flutter',
-  //     home: new Scaffold(
-  //       appBar: new AppBar(
-  //         title: new Text('the first flutter app'),
-  //       ),
-  //       body: new Center(
-  //         //child: new Text('Hello Ashine'),
-  //         //child: new Text(wordPair.asPascalCase),
-  //         child: new RandomWords(),
-  //       ),
-  //     ),
-  //   );
-  // }
 }
 
 class RandomWords extends StatefulWidget {
