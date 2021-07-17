@@ -23,6 +23,9 @@ class RandomWords extends StatefulWidget {
 //这个类将保存随着用户滚动而无限增长的生成的单词对， 以及喜欢的单词对，用户通过重复点击心形 ❤️ 图标来将它们从列表中添加或删除。
 class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
+
+  final _saved = new Set<WordPair>();
+
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
   @override
@@ -61,10 +64,16 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildRow(WordPair pair) {
+    //alreadySaved来检查确保单词对还没有添加到收藏夹中。
+    final alreadySaved = _saved.contains(pair);
     return new ListTile(
       title: new Text(
         pair.asPascalCase,
         style: _biggerFont,
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
       ),
     );
   }
